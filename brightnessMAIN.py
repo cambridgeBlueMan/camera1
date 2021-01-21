@@ -23,6 +23,10 @@ class Code_Dialog(QtWidgets.QDialog):
         # now pass the main window object to it so that the setupUi method can draw all
         # the widgets into the window
         self.ui.setupUi(self)
+        self.ui.sharpness1.setRanges(-100,100,80)
+        print(type(self.ui.contrast1))
+        self.ui.contrast1.setRanges(-100,100,80)
+        self.ui.saturation1.setRanges(-100,100,80)
         #self.ui.imageEffect.addItem('none')
         #self.ui.imageEffect.addItem('negative')
         #vwlist=['tom','dick','harry']

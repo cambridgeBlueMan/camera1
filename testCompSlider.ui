@@ -26,22 +26,22 @@
     <item row="0" column="0">
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>TextLabel</string>
+       <string>Brightness</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
      <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>TextLabel</string>
+       <string>Contrast</string>
       </property>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="CompositeSlider" name="widget" native="true"/>
+     <widget class="CompositeSlider" name="brightness" native="true"/>
     </item>
     <item row="1" column="1">
-     <widget class="CompositeSlider" name="widget_2" native="true"/>
+     <widget class="CompositeSlider" name="contrast" native="true"/>
     </item>
    </layout>
   </widget>
@@ -50,7 +50,7 @@
   <customwidget>
    <class>CompositeSlider</class>
    <extends>QWidget</extends>
-   <header location="global">mysliders.py</header>
+   <header location="global">mysliders</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

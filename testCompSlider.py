@@ -24,12 +24,13 @@ class Ui_Dialog(object):
         self.label_2 = QtWidgets.QLabel(self.formLayoutWidget)
         self.label_2.setObjectName("label_2")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_2)
-        self.widget = CompositeSlider(self.formLayoutWidget)
-        self.widget.setObjectName("widget")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.widget)
-        self.widget_2 = CompositeSlider(self.formLayoutWidget)
-        self.widget_2.setObjectName("widget_2")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.widget_2)
+        self.brightness = CompositeSlider(self.formLayoutWidget)
+        self.brightness.setObjectName("brightness")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.brightness)
+        self.brightness.setRanges(0,100,66)
+        self.contrast = CompositeSlider(self.formLayoutWidget)
+        self.contrast.setObjectName("contrast")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.contrast)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -37,8 +38,8 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "TextLabel"))
-        self.label_2.setText(_translate("Dialog", "TextLabel"))
+        self.label.setText(_translate("Dialog", "Brightness"))
+        self.label_2.setText(_translate("Dialog", "Contrast"))
 
 from mysliders import CompositeSlider
 

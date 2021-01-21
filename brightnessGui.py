@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'vwBrightness.ui'
+# Form implementation generated from reading ui file 'brightness.ui'
 #
 # Created by: PyQt5 UI code generator 5.11.3
 #
@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(957, 864)
+        Dialog.resize(1780, 908)
         self.brightnessSlider = QtWidgets.QSlider(Dialog)
         self.brightnessSlider.setGeometry(QtCore.QRect(50, 390, 369, 31))
         self.brightnessSlider.setMaximum(100)
@@ -198,6 +198,30 @@ class Ui_Dialog(object):
         self.brightnessSpin.setMaximum(100)
         self.brightnessSpin.setProperty("value", 50)
         self.brightnessSpin.setObjectName("brightnessSpin")
+        self.formLayoutWidget_2 = QtWidgets.QWidget(Dialog)
+        self.formLayoutWidget_2.setGeometry(QtCore.QRect(790, 70, 631, 91))
+        self.formLayoutWidget_2.setObjectName("formLayoutWidget_2")
+        self.formLayout_2 = QtWidgets.QFormLayout(self.formLayoutWidget_2)
+        self.formLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.formLayout_2.setObjectName("formLayout_2")
+        self.label_12 = QtWidgets.QLabel(self.formLayoutWidget_2)
+        self.label_12.setObjectName("label_12")
+        self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_12)
+        self.sharpness1 = CompositeSlider(self.formLayoutWidget_2)
+        self.sharpness1.setObjectName("sharpness1")
+        self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.sharpness1)
+        self.label_13 = QtWidgets.QLabel(self.formLayoutWidget_2)
+        self.label_13.setObjectName("label_13")
+        self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_13)
+        self.contrast1 = QtWidgets.QWidget(self.formLayoutWidget_2)
+        self.contrast1.setObjectName("contrast1")
+        self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.contrast1)
+        self.label_14 = QtWidgets.QLabel(self.formLayoutWidget_2)
+        self.label_14.setObjectName("label_14")
+        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_14)
+        self.saturation1 = QtWidgets.QWidget(self.formLayoutWidget_2)
+        self.saturation1.setObjectName("saturation1")
+        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.saturation1)
         self.Preview.setBuddy(self.Preview)
 
         self.retranslateUi(Dialog)
@@ -244,4 +268,8 @@ class Ui_Dialog(object):
         self.label_9.setText(_translate("Dialog", "Exposure Mode"))
         self.label_10.setText(_translate("Dialog", "Flash Mode"))
         self.label_11.setText(_translate("Dialog", "Meter Mode"))
+        self.label_12.setText(_translate("Dialog", "Sharpness"))
+        self.label_13.setText(_translate("Dialog", "Contrast"))
+        self.label_14.setText(_translate("Dialog", "Saturation"))
 
+from mysliders import CompositeSlider

@@ -56,7 +56,7 @@ class Code_Form(QtWidgets.QMainWindow):
         self.duration = self.getDuration()
         self.speed = 4
         self.increment = 1.0/self.sensorWidth #(self.framerate*self.duration)
-        self.resolution = (1920,1080)
+        self.resolution = (960,1080)
         self.indents = self.getIndents
         self.camera.start_preview(fullscreen = False, window = (1260,0,480,540))
         self.camera.sensor_mode = 1
@@ -212,7 +212,7 @@ class Code_Form(QtWidgets.QMainWindow):
             fileName = self.getFileNameFromUser()      
         else:
             fileName = cameraFunctions.generateFileName('v')
-        self.camera.start_recording(fileName)
+        self.camera.start_recording(fileName, bitrate=8000000)
         # Is this a left to right zoom? 
         if self.sender().objectName()=='lrRecord':
             # If so then are we going l-r or r-l

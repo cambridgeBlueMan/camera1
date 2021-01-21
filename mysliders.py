@@ -45,7 +45,9 @@ class CompositeDial(qtw.QAbstractSlider):
         self.show()
     
     def doWork(*args):
-        args[0].parent().parent().updateCameraSettings(args[0].objectName(), args[1])
+        print(args[0].sender())
+        print(args[1])
+        #args[0].parent().parent().updateCameraSettings(args[0].objectName(), args[1])
         pass
 
     def setRanges (self, min, max, default):
@@ -100,8 +102,11 @@ class CompositeSlider(qtw.QAbstractSlider):
         self.show()
 
     def doWork(*args):
+        print(args[0].sender())
+        print(args[1])
         # next line is far from satisfactory
-        args[0].parent().parent().parent().parent().parent().parent().updateCameraSettings(args[0].objectName(), args[1])
+        
+        #args[0].parent().parent().parent().parent().parent().parent().updateCameraSettings(args[0].objectName(), args[1])
         #print(args[0].parent().parent().parent().parent().parent().parent().objectName())
         #MainWindow.updateCameraSettings(args[0].objectName(), args[1])
         #print(dir(MainWindow))

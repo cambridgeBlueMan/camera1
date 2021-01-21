@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 # insert appropriate names here
-from vwBrightnessGui import Ui_Dialog
+from brightnessGui import Ui_Dialog
 #
 from picamera import PiCamera
 from time import sleep
@@ -106,7 +106,6 @@ class Code_Dialog(QtWidgets.QDialog):
         print(self.camera.IMAGE_EFFECTS.values())
         print(type(self.camera.IMAGE_EFFECTS))
         print(self.camera.IMAGE_EFFECTS.keys)
-        print(values().camera.IMAGE_EFFECTS)
         self.camera.image_effect = self.sender().currentText()
     def setAwbMode(self):
         self.camera.awb_mode = self.sender().currentText()

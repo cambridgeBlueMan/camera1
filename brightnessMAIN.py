@@ -36,11 +36,11 @@ class Code_Dialog(QtWidgets.QDialog):
         # you might then invoke some methods of your camera object
         self.camera.start_preview(fullscreen = False, window = (960,0,960,540))
         # or set sone attributes
-        self.ui.sharpness1.setRanges(-100,100,self.camera.sharpness)
-        print(type(self.ui.contrast1))
-        self.ui.contrast1.setRanges(-100,100,self.camera.sharpness)
-        self.ui.saturation1.setRanges(-100,100,self.camera.saturation)
-        #self.ui.brightness1.setRanges(0,100,self.camera.brightness)
+        self.ui.sharpness.setRanges(-100,100,self.camera.sharpness)
+        print(type(self.ui.contrast))
+        self.ui.contrast.setRanges(-100,100,self.camera.sharpness)
+        self.ui.saturation.setRanges(-100,100,self.camera.saturation)
+        self.ui.brightness.setRanges(0,100,self.camera.brightness)
         
         self.camera.sensor_mode = 1
         self.ui.imageEffect.addItems(self.camera.IMAGE_EFFECTS)

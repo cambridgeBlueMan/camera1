@@ -44,13 +44,14 @@ class Code_Dialog(QtWidgets.QDialog):
         
         self.camera.sensor_mode = 1
         self.ui.imageEffect.addItems(self.camera.IMAGE_EFFECTS)
+        self.ui.imageEffect.setCurrentText('none')
         self.ui.awbMode.addItems(self.camera.AWB_MODES)
         self.ui.drcStrength.addItems(self.camera.DRC_STRENGTHS)
         self.ui.exposureMode.addItems(self.camera.EXPOSURE_MODES)
         self.ui.exposureMode.setCurrentText('auto')
         self.ui.flashMode.addItems(self.camera.FLASH_MODES)
         self.ui.meterMode.addItems(self.camera.METER_MODES)
-        self.camera.color_effects=(190,190)
+        #self.camera.color_effects=(190,190)
         #this portion of code refers to some pi camera attributes in the camera class
         '''def _init_defaults(self):
         self.sharpness = 0

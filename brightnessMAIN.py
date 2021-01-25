@@ -23,10 +23,6 @@ class Code_Dialog(QtWidgets.QDialog):
         # now pass the main window object to it so that the setupUi method can draw all
         # the widgets into the window
         self.ui.setupUi(self)
-        self.ui.sharpness1.setRanges(-100,100,80)
-        print(type(self.ui.contrast1))
-        self.ui.contrast1.setRanges(-100,100,80)
-        self.ui.saturation1.setRanges(-100,100,80)
         #self.ui.imageEffect.addItem('none')
         #self.ui.imageEffect.addItem('negative')
         #vwlist=['tom','dick','harry']
@@ -40,14 +36,43 @@ class Code_Dialog(QtWidgets.QDialog):
         # you might then invoke some methods of your camera object
         self.camera.start_preview(fullscreen = False, window = (960,0,960,540))
         # or set sone attributes
+        self.ui.sharpness1.setRanges(-100,100,self.camera.sharpness)
+        print(type(self.ui.contrast1))
+        self.ui.contrast1.setRanges(-100,100,self.camera.sharpness)
+        self.ui.saturation1.setRanges(-100,100,self.camera.saturation)
+        #self.ui.brightness1.setRanges(0,100,self.camera.brightness)
+        
         self.camera.sensor_mode = 1
         self.ui.imageEffect.addItems(self.camera.IMAGE_EFFECTS)
         self.ui.awbMode.addItems(self.camera.AWB_MODES)
         self.ui.drcStrength.addItems(self.camera.DRC_STRENGTHS)
         self.ui.exposureMode.addItems(self.camera.EXPOSURE_MODES)
+        self.ui.exposureMode.setCurrentText('auto')
         self.ui.flashMode.addItems(self.camera.FLASH_MODES)
         self.ui.meterMode.addItems(self.camera.METER_MODES)
+        self.camera.color_effects=(190,190)
         #this portion of code refers to some pi camera attributes in the camera class
+        '''def _init_defaults(self):
+        self.sharpness = 0
+        self.contrast = 0
+        self.brightness = 50
+        self.saturation = 0
+        self.iso = 0 # auto
+        
+        self.video_stabilization = False #code using tick box
+        
+        self.exposure_compensation = 0 # range -25 to +25 
+        self.exposure_mode = 'auto' # set defaults for this
+        
+        self.meter_mode = 'average' # set defaults for this
+        self.awb_mode = 'auto' # set defaults for this
+        self.image_effect = 'none' # set defaults for this
+        
+        self.color_effects = None #option box true or false
+        self.rotation = 0
+        self.hflip = self.vflip = False
+        self.zoom = (0.0, 0.0, 1.0, 1.0)
+        these are the defaults from the pi camera documentation'''
         
 
         

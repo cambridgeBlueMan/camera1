@@ -52,7 +52,9 @@ class Code_Dialog(QtWidgets.QDialog):
         self.ui.exposureMode.addItems(self.camera.EXPOSURE_MODES)
         self.ui.exposureMode.setCurrentText('auto')
         self.ui.flashMode.addItems(self.camera.FLASH_MODES)
+        self.ui.flashMode.setCurrentText('off')
         self.ui.meterMode.addItems(self.camera.METER_MODES)
+        self.ui.meterMode.setCurrentText('average')
         #self.camera.color_effects=(190,190)
         #this portion of code refers to some pi camera attributes in the camera class
         '''def _init_defaults(self):
@@ -67,7 +69,7 @@ class Code_Dialog(QtWidgets.QDialog):
         self.exposure_compensation = 0 # range -25 to +25 
         self.exposure_mode = 'auto' 
         
-        self.meter_mode = 'average' # set defaults for this
+        self.meter_mode = 'average' 
         self.awb_mode = 'auto' 
         self.image_effect = 'none' 
         

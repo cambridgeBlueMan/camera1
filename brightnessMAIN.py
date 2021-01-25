@@ -46,6 +46,7 @@ class Code_Dialog(QtWidgets.QDialog):
         self.ui.imageEffect.addItems(self.camera.IMAGE_EFFECTS)
         self.ui.imageEffect.setCurrentText('none')
         self.ui.awbMode.addItems(self.camera.AWB_MODES)
+        self.ui.awbMode.setCurrentText('auto')
         self.ui.drcStrength.addItems(self.camera.DRC_STRENGTHS)
         self.ui.exposureMode.addItems(self.camera.EXPOSURE_MODES)
         self.ui.exposureMode.setCurrentText('auto')
@@ -63,11 +64,11 @@ class Code_Dialog(QtWidgets.QDialog):
         self.video_stabilization = False #code using tick box
         
         self.exposure_compensation = 0 # range -25 to +25 
-        self.exposure_mode = 'auto' # set defaults for this
+        self.exposure_mode = 'auto' 
         
         self.meter_mode = 'average' # set defaults for this
         self.awb_mode = 'auto' # set defaults for this
-        self.image_effect = 'none' # set defaults for this
+        self.image_effect = 'none' 
         
         self.color_effects = None #option box true or false
         self.rotation = 0

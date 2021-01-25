@@ -48,6 +48,7 @@ class Code_Dialog(QtWidgets.QDialog):
         self.ui.awbMode.addItems(self.camera.AWB_MODES)
         self.ui.awbMode.setCurrentText('auto')
         self.ui.drcStrength.addItems(self.camera.DRC_STRENGTHS)
+        self.ui.drcStrength.setCurrentText('off')
         self.ui.exposureMode.addItems(self.camera.EXPOSURE_MODES)
         self.ui.exposureMode.setCurrentText('auto')
         self.ui.flashMode.addItems(self.camera.FLASH_MODES)
@@ -67,7 +68,7 @@ class Code_Dialog(QtWidgets.QDialog):
         self.exposure_mode = 'auto' 
         
         self.meter_mode = 'average' # set defaults for this
-        self.awb_mode = 'auto' # set defaults for this
+        self.awb_mode = 'auto' 
         self.image_effect = 'none' 
         
         self.color_effects = None #option box true or false

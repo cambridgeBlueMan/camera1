@@ -341,6 +341,9 @@
    <extends>QWidget</extends>
    <header location="global">mysliders</header>
    <container>1</container>
+   <slots>
+    <signal>leasSignal(int)</signal>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources/>
@@ -416,8 +419,8 @@
    <slot>setImageEffect(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>410</x>
-     <y>521</y>
+     <x>369</x>
+     <y>452</y>
     </hint>
     <hint type="destinationlabel">
      <x>809</x>
@@ -432,8 +435,8 @@
    <slot>setAwbMode(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>492</x>
-     <y>582</y>
+     <x>369</x>
+     <y>490</y>
     </hint>
     <hint type="destinationlabel">
      <x>877</x>
@@ -448,8 +451,8 @@
    <slot>setDrcStrength(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>417</x>
-     <y>615</y>
+     <x>369</x>
+     <y>528</y>
     </hint>
     <hint type="destinationlabel">
      <x>815</x>
@@ -464,8 +467,8 @@
    <slot>setExposureMode(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>552</x>
-     <y>647</y>
+     <x>369</x>
+     <y>566</y>
     </hint>
     <hint type="destinationlabel">
      <x>735</x>
@@ -480,8 +483,8 @@
    <slot>setFlashMode(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>451</x>
-     <y>674</y>
+     <x>369</x>
+     <y>604</y>
     </hint>
     <hint type="destinationlabel">
      <x>695</x>
@@ -496,12 +499,28 @@
    <slot>setMeterMode(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>395</x>
-     <y>724</y>
+     <x>369</x>
+     <y>642</y>
     </hint>
     <hint type="destinationlabel">
      <x>743</x>
      <y>622</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sharpness</sender>
+   <signal>leasSignal(int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>changeBrightness(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>652</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>681</x>
+     <y>258</y>
     </hint>
    </hints>
   </connection>

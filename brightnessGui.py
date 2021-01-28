@@ -112,7 +112,7 @@ class Ui_Dialog(object):
         self.formLayoutWidget_2.setGeometry(QtCore.QRect(400, 80, 731, 191))
         self.formLayoutWidget_2.setObjectName("formLayoutWidget_2")
         self.formLayout_2 = QtWidgets.QFormLayout(self.formLayoutWidget_2)
-        self.formLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.formLayout_2.setContentsMargins(0, 3, 0, 3)
         self.formLayout_2.setObjectName("formLayout_2")
         self.label_12 = QtWidgets.QLabel(self.formLayoutWidget_2)
         self.label_12.setObjectName("label_12")
@@ -179,6 +179,13 @@ class Ui_Dialog(object):
         self.exposureMode.currentIndexChanged['QString'].connect(Dialog.setExposureMode)
         self.flashMode.currentIndexChanged['QString'].connect(Dialog.setFlashMode)
         self.meterMode.currentIndexChanged['QString'].connect(Dialog.setMeterMode)
+        self.sharpness.lnValueChanged['int'].connect(Dialog.changeCameraValue)
+        self.contrast.lnValueChanged['int'].connect(Dialog.changeCameraValue)
+        self.saturation.lnValueChanged['int'].connect(Dialog.changeCameraValue)
+        self.brightness.lnValueChanged['int'].connect(Dialog.changeCameraValue)
+        self.color_effectsU.lnValueChanged['int'].connect(Dialog.changeCameraValue)
+        self.color_effectsV.lnValueChanged['int'].connect(Dialog.changeCameraValue)
+        self.saturation.lnValueChanged['int'].connect(Dialog.changeCameraValue)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):

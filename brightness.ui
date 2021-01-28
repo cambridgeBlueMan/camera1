@@ -240,6 +240,12 @@
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout_2">
+    <property name="topMargin">
+     <number>3</number>
+    </property>
+    <property name="bottomMargin">
+     <number>3</number>
+    </property>
     <item row="0" column="0">
      <widget class="QLabel" name="label_12">
       <property name="text">
@@ -342,7 +348,7 @@
    <header location="global">mysliders</header>
    <container>1</container>
    <slots>
-    <signal>leasSignal(int)</signal>
+    <signal>lnValueChanged(int)</signal>
    </slots>
   </customwidget>
  </customwidgets>
@@ -510,9 +516,9 @@
   </connection>
   <connection>
    <sender>sharpness</sender>
-   <signal>leasSignal(int)</signal>
+   <signal>lnValueChanged(int)</signal>
    <receiver>Dialog</receiver>
-   <slot>changeBrightness(int)</slot>
+   <slot>changeCameraValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>652</x>
@@ -521,6 +527,102 @@
     <hint type="destinationlabel">
      <x>681</x>
      <y>258</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>contrast</sender>
+   <signal>lnValueChanged(int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>changeCameraValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>656</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saturation</sender>
+   <signal>lnValueChanged(int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>changeCameraValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>751</x>
+     <y>148</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1047</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>brightness</sender>
+   <signal>lnValueChanged(int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>changeCameraValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>606</x>
+     <y>181</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>727</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>color_effectsU</sender>
+   <signal>lnValueChanged(int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>changeCameraValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>696</x>
+     <y>324</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>669</x>
+     <y>734</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>color_effectsV</sender>
+   <signal>lnValueChanged(int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>changeCameraValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>806</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>747</x>
+     <y>744</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saturation</sender>
+   <signal>lnValueChanged(int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>changeCameraValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>833</x>
+     <y>153</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>857</x>
+     <y>797</y>
     </hint>
    </hints>
   </connection>
@@ -540,5 +642,6 @@
   <slot>setExposureMode(QString)</slot>
   <slot>setFlashMode(QString)</slot>
   <slot>setMeterMode(QString)</slot>
+  <slot>changeCameraValue(int)</slot>
  </slots>
 </ui>

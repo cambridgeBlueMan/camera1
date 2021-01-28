@@ -8,41 +8,31 @@ from time import sleep
 import sys
 import datetime
 import cameraFunctions
-"""
-You may need to change the line declaring the class below. It will depend on the choice you make
-for your containing window: main window, dialog box etc)
-"""
+
 class Code_Dialog(QtWidgets.QDialog):
 
     def __init__(self):
         super().__init__()
-        # Ui_Form is the main designer generated class. so instantiate one. Precede the variable name with
-        # the word 'self'
-
         self.ui = Ui_Dialog()
-        # now pass the main window object to it so that the setupUi method can draw all
-        # the widgets into the window
         self.ui.setupUi(self)
-        #self.ui.imageEffect.addItem('none')
-        #self.ui.imageEffect.addItem('negative')
-        #vwlist=['tom','dick','harry']
-        #self.ui.imageEffect.addItems(vwlist)
         self.show()
-        # now instantiate a camera object. Again the variable name is preceded by the word 'self'
+        
+        # now instantiate a camera object. 
         self.camera = PiCamera()
         # you might then declare and initialise some variable which will be available across the class
         self.framerate = 30.0
         self.resolution = (1920,1080)
         # you might then invoke some methods of your camera object
         self.camera.start_preview(fullscreen = False, window = (960,0,960,540))
-        # or set sone attributes
-        self.ui.sharpness1.setRanges(-100,100,self.camera.sharpness)
-        print(type(self.ui.contrast1))
-        self.ui.contrast1.setRanges(-100,100,self.camera.sharpness)
-        self.ui.saturation1.setRanges(-100,100,self.camera.saturation)
-        #self.ui.brightness1.setRanges(0,100,self.camera.brightness)
         
+        # or set some ranges and default values for composite sliders and dials
+        self.ui.sharpness.setRanges(-100,100,self.camera.sharpness)
+        self.ui.contrast.setRanges(-100,100,self.camera.contrast)
+        self.ui.saturation.setRanges(-100,100,self.camera.saturation)
+        self.ui.brightness.setRanges(0,100,self.camera.brightness)
+        # 
         self.camera.sensor_mode = 1
+        # camera dictionarys provide entries for drop down lists
         self.ui.imageEffect.addItems(self.camera.IMAGE_EFFECTS)
         self.ui.awbMode.addItems(self.camera.AWB_MODES)
         self.ui.drcStrength.addItems(self.camera.DRC_STRENGTHS)
@@ -88,11 +78,6 @@ class Code_Dialog(QtWidgets.QDialog):
 
         # add your own method functions below
 
-    def someMethodName(self):
-        print(self)
-
-    def AnotherMethod(self):
-        print(self)
     def takePhoto(self):
         #print(self)
         vwPhoto = cameraFunctions.generateFileName('s')
@@ -114,21 +99,21 @@ class Code_Dialog(QtWidgets.QDialog):
         if self.sender().isChecked()==True:
             self.camera.start_preview(fullscreen = False, window = (960,0,960,540))
         else:self.camera.stop_preview()
-    
-    def changeBrightness(self):
-        #print(self)
-        print(self.sender().value())
-        self.camera.brightness = self.sender().value()
-        
-    def changeContrast(self):
-        #print(self.sender().value())
-        self.camera.contrast = self.sender().value()
-    def changeSharpness(self):
-        #print(self.sender().value())
-        self.camera.contrast = self.sender().value()
-    def changeSaturation(self):
-        #print(self.sender().value())
-        self.camera.saturation = self.sender().value()
+     
+    def changeCameraValue(self, value):
+        control = self.sender().objectName()
+        #value = args[1]
+        if control == "brightness":
+            self.camera.brightness = value
+        elif control == "saturation":
+            print("in saturation")
+            self.camera.saturation = value
+        elif control == "contrast":
+            self.camera.contrast = value
+        elif control == "sharpness":
+            self.camera.sharpness  = value
+        else:
+            print("Unknown control!")
     def setImageEffect(self):
         print(self)
         print(self.camera.IMAGE_EFFECTS.keys())
@@ -136,6 +121,7 @@ class Code_Dialog(QtWidgets.QDialog):
         print(type(self.camera.IMAGE_EFFECTS))
         print(self.camera.IMAGE_EFFECTS.keys)
         self.camera.image_effect = self.sender().currentText()
+        
     def setAwbMode(self):
         self.camera.awb_mode = self.sender().currentText()
         print(self)

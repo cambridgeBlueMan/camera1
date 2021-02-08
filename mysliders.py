@@ -9,7 +9,6 @@ from PyQt5 import QtWidgets as qtw
 from PyQt5 import QtGui as qtg
 from PyQt5 import QtCore as qtc
 
-
 class CompositeSlider(qtw.QWidget):
     lnValueChanged =  qtc.pyqtSignal(int)
     global lnMin, lnMax, lnDefault
@@ -169,8 +168,46 @@ class CompositeDial(qtw.QAbstractSlider):
         self.slider.setMaximum(max)
         self.slider.setValue(default)
 
-
 """
+
+class DDPlayerWindow(qtw.QLabel):                       # - QWidget    + QLabel
+    def __init__(self, parent):
+        """MainWindow constructor.
+
+        This widget will be our main window.
+        We'll define all the UI components in here.
+        """
+        super().__init__(parent)
+        self.setAcceptDrops(True)
+        #self.setText(" Accept Drops")
+        #self.setStyleSheet("QLabel { background-color : #ccd; color : blue; font-size: 20px;}")
+
+    def dragEnterEvent(self, e):
+        print("DragEnter")
+        e.accept()
+
+    def dragMoveEvent(self, e):
+        print("DragMove")
+        e.accept()
+
+    def dropEvent(self, e):
+        print("DropEvent")
+        #print (type(e))
+        #print(dir(e.mimeData().dumpObjectInfo()))
+        #print(dir(e.mimeData().isWidgetType()))
+
+
+        #print ("Mime data: ", e.mimeData())
+        position = e.pos()
+        print(position)
+        print(e.mimeData().text())
+
+        #self.setText(e.mimeData().text())                #  +++
+        print(e.dropAction)
+        e.setDropAction(qtc.Qt.MoveAction)                   #  +++
+
+        e.accept()
+
 
 if __name__ == '__main__':
     app = qtw.QApplication(sys.argv)

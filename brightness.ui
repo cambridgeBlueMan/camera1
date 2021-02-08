@@ -240,12 +240,15 @@
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout_2">
+<<<<<<< HEAD
+=======
     <property name="topMargin">
      <number>3</number>
     </property>
     <property name="bottomMargin">
      <number>3</number>
     </property>
+>>>>>>> alternate
     <item row="0" column="0">
      <widget class="QLabel" name="label_12">
       <property name="text">
@@ -347,9 +350,12 @@
    <extends>QWidget</extends>
    <header location="global">mysliders</header>
    <container>1</container>
+<<<<<<< HEAD
+=======
    <slots>
     <signal>lnValueChanged(int)</signal>
    </slots>
+>>>>>>> alternate
   </customwidget>
  </customwidgets>
  <resources/>
@@ -425,8 +431,13 @@
    <slot>setImageEffect(QString)</slot>
    <hints>
     <hint type="sourcelabel">
+<<<<<<< HEAD
+     <x>410</x>
+     <y>521</y>
+=======
      <x>369</x>
      <y>452</y>
+>>>>>>> alternate
     </hint>
     <hint type="destinationlabel">
      <x>809</x>
@@ -441,8 +452,13 @@
    <slot>setAwbMode(QString)</slot>
    <hints>
     <hint type="sourcelabel">
+<<<<<<< HEAD
+     <x>492</x>
+     <y>582</y>
+=======
      <x>369</x>
      <y>490</y>
+>>>>>>> alternate
     </hint>
     <hint type="destinationlabel">
      <x>877</x>
@@ -457,8 +473,13 @@
    <slot>setDrcStrength(QString)</slot>
    <hints>
     <hint type="sourcelabel">
+<<<<<<< HEAD
+     <x>417</x>
+     <y>615</y>
+=======
      <x>369</x>
      <y>528</y>
+>>>>>>> alternate
     </hint>
     <hint type="destinationlabel">
      <x>815</x>
@@ -473,8 +494,13 @@
    <slot>setExposureMode(QString)</slot>
    <hints>
     <hint type="sourcelabel">
+<<<<<<< HEAD
+     <x>552</x>
+     <y>647</y>
+=======
      <x>369</x>
      <y>566</y>
+>>>>>>> alternate
     </hint>
     <hint type="destinationlabel">
      <x>735</x>
@@ -489,8 +515,13 @@
    <slot>setFlashMode(QString)</slot>
    <hints>
     <hint type="sourcelabel">
+<<<<<<< HEAD
+     <x>451</x>
+     <y>674</y>
+=======
      <x>369</x>
      <y>604</y>
+>>>>>>> alternate
     </hint>
     <hint type="destinationlabel">
      <x>695</x>
@@ -505,8 +536,13 @@
    <slot>setMeterMode(QString)</slot>
    <hints>
     <hint type="sourcelabel">
+<<<<<<< HEAD
+     <x>395</x>
+     <y>724</y>
+=======
      <x>369</x>
      <y>642</y>
+>>>>>>> alternate
     </hint>
     <hint type="destinationlabel">
      <x>743</x>
@@ -514,6 +550,8 @@
     </hint>
    </hints>
   </connection>
+<<<<<<< HEAD
+=======
   <connection>
    <sender>sharpness</sender>
    <signal>lnValueChanged(int)</signal>
@@ -626,6 +664,7 @@
     </hint>
    </hints>
   </connection>
+>>>>>>> alternate
  </connections>
  <slots>
   <slot>takePhoto()</slot>
@@ -642,6 +681,9 @@
   <slot>setExposureMode(QString)</slot>
   <slot>setFlashMode(QString)</slot>
   <slot>setMeterMode(QString)</slot>
+<<<<<<< HEAD
+=======
   <slot>changeCameraValue(int)</slot>
+>>>>>>> alternate
  </slots>
 </ui>

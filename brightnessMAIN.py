@@ -7,6 +7,7 @@ from picamera import PiCamera
 from time import sleep
 import sys
 import datetime
+import json
 import cameraFunctions
 class Code_Dialog(QtWidgets.QDialog):
 
@@ -15,7 +16,11 @@ class Code_Dialog(QtWidgets.QDialog):
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
         self.show()
+        #load a settings file
+        self.fileObj = open("settings.txt")
+        self.cs = json.loads(self.fileObj.read())
         self.camera = PiCamera()
+        print (type (self.cs))
         # you might then declare and initialise some variable which will be available across the class
         self.framerate = 30.0
         self.resolution = (1920,1080)
@@ -42,32 +47,13 @@ class Code_Dialog(QtWidgets.QDialog):
         self.ui.meterMode.addItems(self.camera.METER_MODES)
         self.ui.meterMode.setCurrentText('average')
         #self.camera.color_effects=(190,190)
-        #this portion of code refers to some pi camera attributes in the camera class
-        '''def _init_defaults(self):
-        self.sharpness = 0
-        self.contrast = 0
-        self.brightness = 50
-        self.saturation = 0
-        self.iso = 0 # auto
-        
-        self.video_stabilization = False #code using tick box
-        
-        self.exposure_compensation = 0 # range -25 to +25 
-        self.exposure_mode = 'auto' 
-        
-        self.meter_mode = 'average' 
-        self.awb_mode = 'auto' 
         self.image_effect = 'none' 
         
         self.color_effects = None #option box true or false
         self.rotation = 0
         self.hflip = self.vflip = False
         self.zoom = (0.0, 0.0, 1.0, 1.0)
-        these are the defaults from the pi camera documentation'''
-        
-
-        
-    
+       
         """
         Note the following line:
         
@@ -76,7 +62,11 @@ class Code_Dialog(QtWidgets.QDialog):
         the code line sets the camera's framerate to the value held in the framerate variable
         """
         self.camera.framerate = self.framerate
-
+        #self.ui.brightness.sendValue(self.cs["brightness"])
+        #self.cs["brightness"]
+        #print(self.cs["brightness"])
+        self.ui.imageEffect.setCurrentText(self.cs ["image_effect"])
+        
         # add your own method functions below
 
     def takePhoto(self):
@@ -149,4 +139,4 @@ if __name__ == "__main__":
     MainWindow = Code_Dialog()
     sys.exit(app.exec_())
                                                                                                                                                                                                                  
-                                                                                                                                                                                                                 
+QtWidgets.QComboBox.acceptDrops
